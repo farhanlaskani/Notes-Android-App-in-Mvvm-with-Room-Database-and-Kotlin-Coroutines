@@ -1,9 +1,9 @@
-package com.example.notes.room
+package com.softlaskani.notes.room
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.notes.NoteRepositry
+import com.softlaskani.notes.NoteRepositry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

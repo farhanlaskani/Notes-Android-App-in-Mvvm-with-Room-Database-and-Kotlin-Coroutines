@@ -1,5 +1,6 @@
-package com.example.notes
+package com.softlaskani.notes
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,11 +9,10 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.notes.databinding.FragmentUpdateBinding
-import com.example.notes.room.MainViewModel
-import com.example.notes.room.Note
+import com.softlaskani.notes.room.MainViewModel
+import com.softlaskani.notes.room.Note
+import com.softlaskani.notes.databinding.FragmentUpdateBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -29,7 +29,8 @@ class UpdateFragment : AppCompatActivity() {
         binding = FragmentUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            MainViewModel::class.java)
         val toolbar = binding.toolbar
        setSupportActionBar(toolbar)
 
@@ -53,11 +54,12 @@ class UpdateFragment : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun updatebackpress() {
         val newtitle = binding.txttitleUpdate.text.toString()
         val newdes = binding.txtcontantUpdate.text.toString()
-        var sdf = SimpleDateFormat("dd/MM/YYYY   HH:mm")
-        var date = sdf.format(Date())
+        val sdf = SimpleDateFormat("dd/mm/yyyy   HH:mm")
+        val date = sdf.format(Date())
 
 
         val updatenote = Note(noteid,newtitle,newdes,date)
@@ -68,14 +70,14 @@ class UpdateFragment : AppCompatActivity() {
         if (newtitle.isEmpty() && newdes.isNotEmpty() ){
             mainViewModel.update(updatenote2)
             Toast.makeText(this@UpdateFragment, "save", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this@UpdateFragment,MainActivity::class.java))
+            startActivity(Intent(this@UpdateFragment, MainActivity::class.java))
             this.finish()
 
 
         } else if (newtitle.isNotEmpty() && newdes.isEmpty()){
             mainViewModel.update(updatenote)
             Toast.makeText(this@UpdateFragment, "save", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this@UpdateFragment,MainActivity::class.java))
+            startActivity(Intent(this@UpdateFragment, MainActivity::class.java))
             this.finish()
         }
         else if (newtitle.isNotEmpty() && newdes.isNotEmpty()) {

@@ -1,17 +1,16 @@
-package com.example.notes.ui
+package com.softlaskani.notes.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.setViewTreeOnBackPressedDispatcherOwner
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.notes.R
-import com.example.notes.databinding.ActivityCreateNoteBinding
-import com.example.notes.room.MainViewModel
-import com.example.notes.room.Note
+import com.softlaskani.notes.room.MainViewModel
+import com.softlaskani.notes.room.Note
+import com.softlaskani.notes.R
+import com.softlaskani.notes.databinding.ActivityCreateNoteBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -25,7 +24,8 @@ class CreateNote : AppCompatActivity() {
         binding = ActivityCreateNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            MainViewModel::class.java)
 
         setSupportActionBar(binding.toolbar2)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)

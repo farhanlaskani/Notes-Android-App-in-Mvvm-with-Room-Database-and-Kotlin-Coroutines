@@ -1,4 +1,4 @@
-package com.example.notes
+package com.softlaskani.notes
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.notes.room.Note
+import com.softlaskani.notes.room.Note
 
 class RvAdapter(private val itemclick: Itemclick) : RecyclerView.Adapter<RvAdapter.ViewHolder>() {
 

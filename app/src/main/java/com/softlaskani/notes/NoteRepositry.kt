@@ -1,8 +1,8 @@
-package com.example.notes
+package com.softlaskani.notes
 
 import androidx.lifecycle.LiveData
-import com.example.notes.room.Note
-import com.example.notes.room.NoteDao
+import com.softlaskani.notes.room.Note
+import com.softlaskani.notes.room.NoteDao
 
 class NoteRepositry( private val dao: NoteDao) {
 

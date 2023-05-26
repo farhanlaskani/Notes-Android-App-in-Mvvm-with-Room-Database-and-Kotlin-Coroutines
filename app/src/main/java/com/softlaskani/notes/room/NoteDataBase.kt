@@ -1,4 +1,4 @@
-package com.example.notes.room
+package com.softlaskani.notes.room
 
 import android.content.Context
 import androidx.room.Database
@@ -14,12 +14,12 @@ abstract class NoteDataBase : RoomDatabase() {
 
         @Volatile
 
-        private var INSTACE : NoteDataBase ?= null
+        private var INSTACE : NoteDataBase?= null
 
         fun getdatabase(context: Context) : NoteDataBase {
-           if (INSTACE==null) {
+           if (INSTACE ==null) {
                synchronized(this){
-                   INSTACE = Room.databaseBuilder(context ,NoteDataBase::class.java,"note_data").build()
+                   INSTACE = Room.databaseBuilder(context , NoteDataBase::class.java,"note_data").build()
                }
 
            }

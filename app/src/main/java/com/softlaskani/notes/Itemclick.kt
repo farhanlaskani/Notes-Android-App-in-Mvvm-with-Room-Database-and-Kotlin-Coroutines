@@ -1,6 +1,6 @@
-package com.example.notes
+package com.softlaskani.notes
 
-import com.example.notes.room.Note
+import com.softlaskani.notes.room.Note
 
 interface Itemclick {
 

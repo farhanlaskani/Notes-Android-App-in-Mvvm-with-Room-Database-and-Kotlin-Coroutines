@@ -1,4 +1,4 @@
-package com.example.notes
+package com.softlaskani.notes
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.notes.databinding.ActivityMainBinding
-import com.example.notes.room.MainViewModel
-import com.example.notes.room.Note
-import com.example.notes.ui.CreateNote
+
+import com.softlaskani.notes.room.MainViewModel
+import com.softlaskani.notes.room.Note
+import com.softlaskani.notes.ui.CreateNote
+import com.softlaskani.notes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), Itemclick {
 
@@ -22,7 +23,8 @@ class MainActivity : AppCompatActivity(), Itemclick {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            MainViewModel::class.java)
 
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
